@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Monitoring System | Abdulmalik Mbaruk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#00d4ff',
+                        secondary: '#0099cc',
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        surface: '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; }
+        .circuit-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 212, 255, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .glow-text { text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .nav-blur { backdrop-filter: blur(10px); background-color: rgba(10, 10, 10, 0.9); }
+    </style>
+</head>
+<body class="circuit-bg antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html#projects" class="flex items-center text-primary hover:text-white transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    <span class="font-mono text-xl font-bold">&lt;AM/&gt;</span>
+                </a>
+                <div class="text-gray-400 text-sm">Project Breakdown</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-green-900/20 to-transparent"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded border border-primary/30">IoT</span>
+                <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded border border-green-500/30">Agriculture</span>
+                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded border border-blue-500/30">Embedded Systems</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Smart Agriculture <span class="text-primary glow-text">Monitoring System</span>
+            </h1>
+            
+            <p class="text-xl text-gray-400 leading-relaxed max-w-3xl">
+                An end-to-end IoT solution for precision farming, featuring real-time soil monitoring, 
+                automated irrigation, and cloud-based analytics for smallholder farmers in Kenya.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-calendar text-primary mr-2"></i>
+                    <span>Completed: December 2024</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-clock text-primary mr-2"></i>
+                    <span>Duration: 4 Months</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-user text-primary mr-2"></i>
+                    <span>Role: Lead Hardware Engineer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-20 bg-surface border-y border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-exclamation-circle text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Problem</h3>
+                    <p class="text-gray-400 text-sm">Farmers losing 40% of crops due to improper irrigation timing and lack of soil data visibility.</p>
+                </div>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-lightbulb text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Solution</h3>
+                    <p class="text-gray-400 text-sm">Low-cost wireless sensor nodes transmitting soil moisture, pH, and weather data to a central dashboard.</p>
+                </div>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-trophy text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Impact</h3>
+                    <p class="text-gray-400 text-sm">30% reduction in water usage and 25% increase in crop yield during pilot program.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-8">Technical <span class="text-primary">Overview</span></h2>
+            
+            <div class="space-y-12">
+                <!-- Hardware Section -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-green-400">Hardware Architecture</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-microchip text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Microcontroller:</strong> ESP32-S3 for dual-core processing and WiFi/BT connectivity
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-broadcast-tower text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Communication:</strong> LoRaWAN for long-range, low-power farm-wide coverage
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-battery-full text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Power:</strong> Solar panel + LiPo battery management system with sleep mode optimization
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ruler text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Sensors:</strong> Capacitive soil moisture, DHT22 (temp/humidity), pH probe, rainfall detector
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-darker p-6 rounded-xl border border-gray-800 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-sitemap text-6xl text-primary/30 mb-4"></i>
+                            <p class="text-gray-500 text-sm">System Architecture Diagram</p>
+                            <p class="text-gray-600 text-xs mt-2">[Insert Hardware Block Diagram]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Section -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 bg-darker p-6 rounded-xl border border-gray-800 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-code text-6xl text-secondary/30 mb-4"></i>
+                            <p class="text-gray-500 text-sm">Firmware Code Snippet</p>
+                            <p class="text-gray-600 text-xs mt-2">[Insert Code Screenshot]</p>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">Software & Firmware</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-code text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Firmware:</strong> C++ on Arduino framework with FreeRTOS for task management
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-wifi text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Protocol:</strong> MQTT over TLS for secure data transmission to AWS IoT Core
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Backend:</strong> Node.js API with MongoDB for time-series data storage
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-mobile-alt text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <strong>Frontend:</strong> React Native mobile app for farmers with SMS fallback alerts
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PCB Design Section -->
+                <div class="bg-darker p-8 rounded-xl border border-gray-800">
+                    <h3 class="text-xl font-bold mb-6 text-yellow-400">Custom PCB Design</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="space-y-2">
+                            <i class="fas fa-layer-group text-primary text-2xl"></i>
+                            <h4 class="font-bold">4-Layer Board</h4>
+                            <p class="text-gray-400 text-sm">Signal integrity optimization with dedicated power and ground planes</p>
+                        </div>
+                        <div class="space-y-2">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                            <h4 class="font-bold">Protection Circuits</h4>
+                            <p class="text-gray-400 text-sm">Overvoltage, reverse polarity, and ESD protection for field reliability</p>
+                        </div>
+                        <div class="space-y-2">
+                            <i class="fas fa-compress text-primary text-2xl"></i>
+                            <h4 class="font-bold">Compact Form</h4>
+                            <p class="text-gray-400 text-sm">10cm x 6cm weatherproof enclosure with IP65 rating</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-black/30 rounded-lg text-center">
+                        <p class="text-gray-500 text-sm">[Insert PCB Layout Image / 3D Render]</p>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-red-400">Challenges & Solutions</h3>
+                    <div class="space-y-4">
+                        <div class="bg-surface border-l-4 border-red-500 p-4 rounded-r-lg">
+                            <h4 class="font-bold mb-2">Challenge: Power consumption in remote fields</h4>
+                            <p class="text-gray-400 text-sm">Solution: Implemented deep sleep mode (20µA current draw) with scheduled wake intervals and optimized transmission power based on signal strength.</p>
+                        </div>
+                        <div class="bg-surface border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                            <h4 class="font-bold mb-2">Challenge: Sensor corrosion in humid soil</h4>
+                            <p class="text-gray-400 text-sm">Solution: Designed capacitive (not resistive) sensing circuits with conformal coating and gold-plated PCB pads for longevity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Project <span class="text-primary">Gallery</span></h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="aspect-video bg-darker rounded-lg border border-gray-800 flex items-center justify-center">
+                            <span class="text-gray-600 text-sm">[Prototype Image 1]</span>
+                        </div>
+                        <div class="aspect-video bg-darker rounded-lg border border-gray-800 flex items-center justify-center">
+                            <span class="text-gray-600 text-sm">[Field Deployment]</span>
+                        </div>
+                        <div class="aspect-video bg-darker rounded-lg border border-gray-800 flex items-center justify-center">
+                            <span class="text-gray-600 text-sm">[Mobile App UI]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
+                <a href="index.html#projects" class="text-gray-400 hover:text-primary transition-colors flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Projects
+                </a>
+                <div class="flex gap-4">
+                    <span class="text-gray-600">Project 1 of 6</span>
+                    <a href="project-2.html" class="bg-primary text-black px-6 py-2 rounded-full font-bold hover:bg-secondary transition-colors flex items-center">
+                        Next Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Abdulmalik Mbaruk. Embedded Systems Engineer.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
