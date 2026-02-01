@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Navigation Robot | Abdulmalik Mbaruk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#00d4ff',
+                        secondary: '#0099cc',
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        surface: '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; }
+        .circuit-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 212, 255, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .glow-text { text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .nav-blur { backdrop-filter: blur(10px); background-color: rgba(10, 10, 10, 0.9); }
+    </style>
+</head>
+<body class="circuit-bg antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html#projects" class="flex items-center text-primary hover:text-white transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    <span class="font-mono text-xl font-bold">&lt;AM/&gt;</span>
+                </a>
+                <div class="text-gray-400 text-sm">Project Breakdown</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-red-900/20 to-transparent"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded border border-red-500/30">Robotics</span>
+                <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded border border-primary/30">VEX V5</span>
+                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded border border-purple-500/30">Computer Vision</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Autonomous Navigation <span class="text-primary glow-text">Robot</span>
+            </h1>
+            
+            <p class="text-xl text-gray-400 leading-relaxed max-w-3xl">
+                Competition-ready VEX Robotics robot featuring SLAM-based navigation, 
+                object manipulation, and autonomous pathfinding for the "Spin Up" challenge.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-calendar text-primary mr-2"></i>
+                    <span>Completed: March 2024</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-clock text-primary mr-2"></i>
+                    <span>Duration: 6 Months</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-trophy text-primary mr-2"></i>
+                    <span>Result: Regional Finalist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="py-20 bg-surface border-y border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-brain text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Autonomy</h3>
+                    <p class="text-gray-400 text-sm">100% autonomous operation during 15-second autonomous period with obstacle avoidance.</p>
+                </div>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-cogs text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Mechanism</h3>
+                    <p class="text-gray-400 text-sm">Precision flywheel launcher with computer-vision aiming and intake system.</p>
+                </div>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <i class="fas fa-users text-primary text-2xl mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Team Lead</h3>
+                    <p class="text-gray-400 text-sm">Led 4-person team through design, build, and programming phases.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-8">Technical <span class="text-primary">Specifications</span></h2>
+
+            <!-- Mechanical Design -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-6 text-red-400">Mechanical Design</h3>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800 mb-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-3 text-white">Drive System</h4>
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li>• 6-Wheel omni-directional drive (X-drive configuration)</li>
+                                <li>• Gear ratio: 1:1.5 for speed optimization</li>
+                                <li>• Independent suspension for uneven terrain</li>
+                                <li>•_ENCODERS_: Integrated motor encoders for position tracking</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3 text-white">Manipulation</h4>
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li>• Custom CNC'd aluminum intake mechanism</li>
+                                <li>• Two-motor flywheel with PID speed control</li>
+                                <li>• Pneumatic expansion mechanism (legal limit: 12-bar)</li>
+                                <li>• Adjustable hood angle for trajectory control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-video bg-darker rounded-lg border border-gray-800 flex items-center justify-center">
+                    <span class="text-gray-600">[CAD Render / Mechanism Photo]</span>
+                </div>
+            </div>
+
+            <!-- Programming -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-6 text-blue-400">Programming & Algorithms</h3>
+                <div class="space-y-6">
+                    <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                        <h4 class="font-bold mb-3 flex items-center">
+                            <i class="fas fa-route text-primary mr-2"></i>
+                            Navigation Stack (PROS + C++)
+                        </h4>
+                        <pre class="bg-black/50 p-4 rounded-lg text-sm text-gray-300 overflow-x-auto font-mono">
+// Pure Pursuit Algorithm for path tracking
+void followPath(vector&lt;Point&gt; path, double lookAhead) {
+    while (currentIndex < path.size()) {
+        Point target = findLookAheadPoint(path, lookAhead);
+        double curvature = calculateCurvature(target);
+        setDriveVelocity(calculateLeftVel(curvature), 
+                        calculateRightVel(curvature));
+        pros::delay(10);
+    }
+}</pre>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                            <h4 class="font-bold mb-3">PID Control Systems</h4>
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li>• <strong>Drive PID:</strong> Maintains straight-line motion</li>
+                                <li>• <strong>Turn PID:</strong> Precise heading control (±1° accuracy)</li>
+                                <li>• <strong>Flywheel PID:</strong> RPM consistency for accuracy</li>
+                                <li>• <strong>Vision PID:</strong> Aiming alignment with target</li>
+                            </ul>
+                        </div>
+                        <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                            <h4 class="font-bold mb-3">Sensor Fusion</h4>
+                            <ul class="space-y-2 text-gray-400 text-sm">
+                                <li>• <strong>Inertial Sensor:</strong> 3-axis gyro/accelerometer</li>
+                                <li>• <strong>Optical Encoder:</strong> Wheel odometry</li>
+                                <li>• <strong>Vision Sensor:</strong> Object detection (200Hz)</li>
+                                <li>• <strong>Distance Sensor:</strong> Wall detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Vision -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-6 text-purple-400">Computer Vision Pipeline</h3>
+                <div class="bg-darker p-6 rounded-xl border border-gray-800">
+                    <div class="grid md:grid-cols-4 gap-4 mb-6 text-center">
+                        <div class="p-4 bg-black/30 rounded-lg">
+                            <div class="text-primary font-bold mb-1">1. Capture</div>
+                            <div class="text-xs text-gray-500">VEX Vision Sensor</div>
+                        </div>
+                        <div class="p-4 bg-black/30 rounded-lg">
+                            <div class="text-primary font-bold mb-1">2. Filter</div>
+                            <div class="text-xs text-gray-500">HSV Color Space</div>
+                        </div>
+                        <div class="p-4 bg-black/30 rounded-lg">
+                            <div class="text-primary font-bold mb-1">3. Track</div>
+                            <div class="text-xs text-gray-500">Contour Detection</div>
+                        </div>
+                        <div class="p-4 bg-black/30 rounded-lg">
+                            <div class="text-primary font-bold mb-1">4. Aim</div>
+                            <div class="text-xs text-gray-500">PID Alignment</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Implemented custom vision processing pipeline achieving 95% target acquisition accuracy 
+                        at distances up to 3 meters. Used HSV filtering to isolate blue/red targets against 
+                        field background, with dynamic exposure compensation for varying lighting conditions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold mb-6 text-green-400">Performance Metrics</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="bg-darker p-4 rounded-lg border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-primary mb-1">92%</div>
+                        <div class="text-xs text-gray-400">Autonomous Accuracy</div>
+                    </div>
+                    <div class="bg-darker p-4 rounded-lg border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-primary mb-1">0.3s</div>
+                        <div class="text-xs text-gray-400">Target Lock Time</div>
+                    </div>
+                    <div class="bg-darker p-4 rounded-lg border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-primary mb-1">85%</div>
+                        <div class="text-xs text-gray-400">Shot Accuracy</div>
+                    </div>
+                    <div class="bg-darker p-4 rounded-lg border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-primary mb-1">3.2m/s</div>
+                        <div class="text-xs text-gray-400">Max Drive Speed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
+                <a href="project-1.html" class="text-gray-400 hover:text-primary transition-colors flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Previous Project
+                </a>
+                <div class="flex gap-4">
+                    <span class="text-gray-600">Project 2 of 6</span>
+                    <a href="project-3.html" class="bg-primary text-black px-6 py-2 rounded-full font-bold hover:bg-secondary transition-colors flex items-center">
+                        Next Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Abdulmalik Mbaruk. Embedded Systems Engineer.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
