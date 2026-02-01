@@ -94,6 +94,33 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+            z-index: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 0.9;
+        }
+
+        .project-content {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="circuit-bg antialiased">
@@ -112,6 +139,7 @@
                         <a href="#home" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         <a href="#about" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#skills" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#projects" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
                         <a href="#experience" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
                         <a href="#education" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Education</a>
                         <a href="#contact" class="bg-primary text-black hover:bg-secondary transition-colors px-4 py-2 rounded-md text-sm font-bold">Contact</a>
@@ -133,6 +161,7 @@
                 <a href="#home" class="block hover:text-primary px-3 py-2 rounded-md text-base font-medium">Home</a>
                 <a href="#about" class="block hover:text-primary px-3 py-2 rounded-md text-base font-medium">About</a>
                 <a href="#skills" class="block hover:text-primary px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="block hover:text-primary px-3 py-2 rounded-md text-base font-medium">Projects</a>
                 <a href="#experience" class="block hover:text-primary px-3 py-2 rounded-md text-base font-medium">Experience</a>
                 <a href="#contact" class="block text-primary px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
@@ -165,8 +194,8 @@
                     <a href="#contact" class="bg-primary text-black px-8 py-3 rounded-full font-bold hover:bg-secondary transition-all transform hover:scale-105 flex items-center gap-2">
                         <i class="fas fa-paper-plane"></i> Get In Touch
                     </a>
-                    <a href="#experience" class="border border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-black transition-all flex items-center gap-2">
-                        <i class="fas fa-briefcase"></i> View Experience
+                    <a href="#projects" class="border border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-black transition-all flex items-center gap-2">
+                        <i class="fas fa-rocket"></i> View Projects
                     </a>
                 </div>
             </div>
@@ -373,9 +402,167 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-surface relative overflow-hidden">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-surface relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-darker to-transparent opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-primary">Projects</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Explore my embedded systems and robotics projects. Click on any project to view detailed technical breakdowns, methodologies, and outcomes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Smart Agriculture IoT -->
+                <a href="project-1.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-900/30 to-blue-900/30 flex items-center justify-center">
+                            <i class="fas fa-seedling text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">IoT</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Sensors</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">PCB</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Smart Agriculture Monitoring System</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">IoT-based farm monitoring solution using soil moisture sensors, weather stations, and automated irrigation controls with real-time data logging.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2: Autonomous VEX Robot -->
+                <a href="project-2.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-red-900/30 to-orange-900/30 flex items-center justify-center">
+                            <i class="fas fa-robot text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Robotics</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">VEX</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">C++</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Autonomous Navigation Robot</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">VEX Robotics competition robot with autonomous pathfinding, object detection using ultrasonic sensors, and precision manipulation arms.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3: ML Sensor Interface -->
+                <a href="project-3.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Machine Learning</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Embedded ML</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Python</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Predictive Maintenance Sensor</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Edge ML device for industrial equipment monitoring using vibration analysis and temperature sensors to predict failures before they occur.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 4: PCB Power Management -->
+                <a href="project-4.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-900/30 to-red-900/30 flex items-center justify-center">
+                            <i class="fas fa-bolt text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">PCB Design</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Power Electronics</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">KiCad</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Smart Power Management Board</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Custom PCB design for efficient power distribution in embedded systems with battery management, solar charging, and overcurrent protection.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 5: LEGO SPIKE Curriculum -->
+                <a href="project-5.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Education</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">LEGO SPIKE</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Scratch</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">SDG Robotics Curriculum</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Comprehensive educational framework using LEGO SPIKE Prime to teach robotics while addressing UN Sustainable Development Goals.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 6: Data Collection System -->
+                <a href="project-6.html" class="group block">
+                    <div class="project-card bg-darker rounded-xl overflow-hidden border border-gray-800 card-hover h-96 relative">
+                        <!-- Project Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-800/50 to-blue-900/30 flex items-center justify-center">
+                            <i class="fas fa-database text-6xl text-primary/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        
+                        <div class="project-content absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Mobile</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">ODK</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30">Android</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Offline Data Collection Interface</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Custom Android interface for KNBS farm registration with offline capabilities, IMEI tracking, and synchronized cloud backup systems.</p>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span>View Project Details</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-darker relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-surface to-transparent opacity-50"></div>
         
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 reveal">
@@ -391,7 +578,7 @@
                 <div class="relative mb-12 reveal">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 mb-4 md:mb-0 md:text-right order-1">
-                            <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
+                            <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
                                 <span class="text-primary font-mono text-sm">Aug 2025 - Present</span>
                                 <h3 class="text-xl font-bold text-white mt-2">Innovation & Robotics Teacher</h3>
                                 <p class="text-gray-400 font-medium">Light Academy</p>
@@ -414,7 +601,7 @@
                         <div class="md:w-5/12 hidden md:block order-1"></div>
                         <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-darker z-10 order-2"></div>
                         <div class="md:w-5/12 mb-4 md:mb-0 order-3">
-                            <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
+                            <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
                                 <span class="text-secondary font-mono text-sm">Jun 2021 - Aug 2025</span>
                                 <h3 class="text-xl font-bold text-white mt-2">High School Students Mentor</h3>
                                 <p class="text-gray-400 font-medium">Light Academy</p>
@@ -432,7 +619,7 @@
                 <div class="relative mb-12 reveal">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 mb-4 md:mb-0 md:text-right order-1">
-                            <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
+                            <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
                                 <span class="text-primary font-mono text-sm">Mar 2024 - Aug 2024</span>
                                 <h3 class="text-xl font-bold text-white mt-2">School Census Enumerator</h3>
                                 <p class="text-gray-400 font-medium">Kenya National Bureau of Statistics (KNBS)</p>
@@ -454,7 +641,7 @@
                         <div class="md:w-5/12 hidden md:block order-1"></div>
                         <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-darker z-10 order-2"></div>
                         <div class="md:w-5/12 mb-4 md:mb-0 order-3">
-                            <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
+                            <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
                                 <span class="text-secondary font-mono text-sm">May 2023 - Jun 2023</span>
                                 <h3 class="text-xl font-bold text-white mt-2">Field ICT Support</h3>
                                 <p class="text-gray-400 font-medium">KNBS - Kiambu Farm Registration</p>
@@ -472,7 +659,7 @@
                 <div class="relative reveal">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 mb-4 md:mb-0 md:text-right order-1">
-                            <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
+                            <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover inline-block w-full">
                                 <span class="text-primary font-mono text-sm">Dec 2022 - Jan 2023</span>
                                 <h3 class="text-xl font-bold text-white mt-2">ICT Lead</h3>
                                 <p class="text-gray-400 font-medium">KNBS - Farm Registration Project</p>
@@ -492,7 +679,7 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-darker">
+    <section id="education" class="py-20 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & <span class="text-primary">Certifications</span></h2>
@@ -554,13 +741,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-surface relative">
+    <section id="contact" class="py-20 bg-darker relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-primary">Touch</span></h2>
             <p class="text-gray-400 mb-12">Currently open to new opportunities in embedded systems, IoT, and hardware innovation.</p>
 
             <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <a href="mailto:ambaruk80@gmail.com" class="bg-darker p-6 rounded-xl border border-gray-800 card-hover group">
+                <a href="mailto:ambaruk80@gmail.com" class="bg-surface p-6 rounded-xl border border-gray-800 card-hover group">
                     <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-black transition-colors">
                         <i class="fas fa-envelope text-primary group-hover:text-black text-xl"></i>
                     </div>
@@ -568,7 +755,7 @@
                     <p class="text-gray-400 text-sm">ambaruk80@gmail.com</p>
                 </a>
 
-                <a href="tel:+254798023537" class="bg-darker p-6 rounded-xl border border-gray-800 card-hover group">
+                <a href="tel:+254798023537" class="bg-surface p-6 rounded-xl border border-gray-800 card-hover group">
                     <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-black transition-colors">
                         <i class="fas fa-phone text-primary group-hover:text-black text-xl"></i>
                     </div>
@@ -576,7 +763,7 @@
                     <p class="text-gray-400 text-sm">+254 798 023 537</p>
                 </a>
 
-                <div class="bg-darker p-6 rounded-xl border border-gray-800 card-hover group">
+                <div class="bg-surface p-6 rounded-xl border border-gray-800 card-hover group">
                     <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-black transition-colors">
                         <i class="fas fa-map-marker-alt text-primary group-hover:text-black text-xl"></i>
                     </div>
@@ -589,14 +776,14 @@
             <div class="border-t border-gray-800 pt-12">
                 <h3 class="text-xl font-bold mb-8">References</h3>
                 <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div class="bg-darker p-6 rounded-lg border border-gray-800">
+                    <div class="bg-surface p-6 rounded-lg border border-gray-800">
                         <h4 class="font-bold text-white">Nihat Arslan</h4>
                         <p class="text-primary text-sm mb-2">Principal, Light Academy</p>
                         <p class="text-gray-400 text-sm"><i class="fas fa-phone text-xs mr-2"></i>+254 786 705 743</p>
                         <p class="text-gray-400 text-sm"><i class="fas fa-envelope text-xs mr-2"></i>n.arslan@lightacademy.ac.ke</p>
                     </div>
                     
-                    <div class="bg-darker p-6 rounded-lg border border-gray-800">
+                    <div class="bg-surface p-6 rounded-lg border border-gray-800">
                         <h4 class="font-bold text-white">Rajab I. Mbaruku</h4>
                         <p class="text-primary text-sm mb-2">Senior Manager ICT, KNBS</p>
                         <p class="text-gray-400 text-sm"><i class="fas fa-phone text-xs mr-2"></i>+254 717 260 988</p>
